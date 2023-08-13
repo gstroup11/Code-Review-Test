@@ -1,7 +1,8 @@
 //set variables for time and questions
-var currentQuestionIndex = [0];
+var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerid;
+var highscorevalue;
 
 //variables calling back to index
 var timerEl = document.querySelector(".time");
@@ -11,7 +12,7 @@ var choicesEl = document.getElementById("answer-choices");
 
 //Start button click function
 startBtn.addEventListener ("click", function (event) {
-    event.preventDefault;
+    event.preventDefault();
     quizStart();
 })
 
@@ -24,6 +25,10 @@ function quizStart() {
     timerid = setInterval( function() {
         time --;
         timerEl.textContent = time;
+        if (time < 1) {
+            quizEnd();
+        }
+        highscorevalue = time;
     }, 1000);
 
     timerEl.textContent = time;
@@ -53,11 +58,59 @@ function getQuestions() {
         var selectedChoice = event.target.value;
         if (selectedChoice === currentQuestion.answer) {
           currentQuestionIndex++; // Increment the current question index
-          getQuestions(); // Display the next question
+          if (currentQuestionIndex === questions.length) {
+            quizEnd(); // Display the end screen if all questions have been answered
+          } else {
+            getQuestions(); // Display the next question
+          } 
+        } else {
+            time -= 15; // Penalize 15 seconds for a wrong answer
+            if (time < 1) {
+              quizEnd(); // Display the end screen if time runs out
+          }
         }
       });
     
         choicesEl.appendChild(choiceNode);
     }
+
+    if (time <= 0 || currentQuestionIndex === questions.length) {
+        quizEnd();
+      }
 }
 
+function quizEnd() {
+    clearInterval(timerid);
+    questionsEl.setAttribute("class", "hide");
+
+    var endScreenEl = document.getElementById("End-screen");
+    endScreenEl.setAttribute("class", "start");
+
+    displayHighScore();
+}
+
+var submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  var initialsInput = document.getElementById("initials");
+  var initials = initialsInput.value.trim();
+  if (initials !== "") {
+    var highScore = {
+      initials: initials,
+      score: highscorevalue
+    };
+    saveHighScore(highScore);
+    window.location.href = "highscores.html";
+  }
+});
+
+function saveHighScore(highScore) {
+  var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  highScores.push(highScore);
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+}
+
+function displayHighScore() {
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = highscorevalue;
+}
