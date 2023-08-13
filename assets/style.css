@@ -1,3 +1,73 @@
+
+
+/*Highscores*/
+.highscores {
+    font-family: sans-serif;
+    font-size: 45px;
+}
+
+.highscores a {
+    color: #8400d3;
+    text-decoration: none;
+    font-weight: bold;
+}
+/*End highscores*/
+
+/*Timer*/
+.Timer {
+    text-align: right;
+    margin-top: -49px;
+    font-size: 45px;
+    font-family: sans-serif;
+    color: #8400d3;
+    font-weight: bold;
+}
+/*end timer*/
+
+/*Main Screen stlying*/
+#Main-screen {
+    margin: 150px;
+}
+
+#Main-screen h1 {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #8400d3;
+}
+
+#Main-screen p {
+    margin: 30px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#Main-screen button {
+    display: inline-block;
+    background-color: #8400d3;
+    padding: 20px;
+    width: 200px;
+    color: #ffffff;
+    text-align: center;
+    border: 4px double #cccccc;
+    border-radius: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    margin: 5px;
+    -webkit-transition: all 0.5s; 
+    -moz-transition: all 0.5s; 
+    -o-transition: all 0.5s; 
+    transition: all 0.5s; 
+}
+
+#Main-screen button:hover {
+    background-color: rgb(0, 9, 128);
+}
+
+/*End Main Screen Styling*/
+
+/*Start and Hide classes*/
 .start {
     text-align: center;
 }
@@ -5,3 +75,4 @@
 .hide {
     display: none;
 }
+/*End Start and Hide classes*/
