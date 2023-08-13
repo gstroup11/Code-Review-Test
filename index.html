@@ -10,23 +10,30 @@
 
 
 <body>
+    <!--Highscore and timer section-->
    <section>
     <div class ="highscores"><a href="highscores.html">Highscores</a></div>
 
     <div>Timer: <span class = "time">0</span></div>
    </section>
+   <!--End highscore and timer section-->
 
+   <!--Main Start screen section-->
    <section id ="Main-screen" class ="start">
     <h1>Coding Review Test</h1>
     <p>Try your best to answer the questions to your best ability. With each wrong answer your time will go down by 15 seconds and 15 score!</p>
     <button id = "Start-Button">Start Test</button>
    </section>
+   <!--End Main Start screen section-->
 
+   <!--Questions Section-->
    <section id ="questions" class ="hide">
     <h2 id = "full-question"></h2>
     <div id = "answer-choices"></div>
    </section>
+   <!--End Questions Section-->
 
+   <!--End Screen Section-->
    <section id ="End-screen" class ="hide">
     <h2>Completed! Good Job!</h2>
     <p> Your Final Score is: <span id ="final-score"></span></p>
@@ -35,7 +42,9 @@
       <button id ="submit">Submit</button>
     </p>
    </section>
+   <!--End of End Screen sectiion-->
 
+   <!--Links both Javascript pages-->
    <script src="./assets/js/questions.js"></script>
    <script src="./assets/js/script.js"></script>
 </body>

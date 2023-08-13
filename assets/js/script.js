@@ -45,6 +45,7 @@ function getQuestions() {
 
     choicesEl.innerHTML = ""; 
 
+    //puts choices into boxes
     for (var i = 0; i < currentQuestion.choices.length; i++) {
         var choice = currentQuestion.choices[i];
         var choiceNode = document.createElement('button');
@@ -79,6 +80,7 @@ function getQuestions() {
       }
 }
 
+//end quiz function
 function quizEnd() {
     clearInterval(timerid);
     questionsEl.setAttribute("class", "hide");
@@ -89,6 +91,7 @@ function quizEnd() {
     displayHighScore();
 }
 
+//adds functionality to the submit button 
 var submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
@@ -104,12 +107,14 @@ submitButton.addEventListener("click", function(event) {
   }
 });
 
+//saves the highscore to local client storage
 function saveHighScore(highScore) {
   var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
   highScores.push(highScore);
   localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
+//displays the highscore on the end quiz page
 function displayHighScore() {
   var finalScoreEl = document.getElementById("final-score");
   finalScoreEl.textContent = highscorevalue;
