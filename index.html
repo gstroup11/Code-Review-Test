@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Review Test</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+
+<body>
+   <section>
+    <div class ="highscores"><a href="highscores.html">Highscores</a></div>
+
+    <div>Timer: <span class = "time">0</span></div>
+   </section>
+
+   <section id ="Main-screen">
+    <h1>Coding Review Test</h1>
+    <p>Try your best to answer the questions to your best ability. With each wrong answer your time will go down by 15 seconds and 15 score!</p>
+    <button class = "Start-Button">Start Test</button>
+   </section>
+
+   <section id ="questions" class ="hide">
+    <h2 id = "full-question"></h2>
+    <div id = "answer-choices"></div>
+   </section>
+
+   <section id ="End-screen" class ="hide">
+    <h2>Completed! Good Job!</h2>
+    <p> Your Final Score is: <span id ="final-score"></span></p>
+    <p>
+      Enter initials: <input type="text" id ="initials" max="3" />
+      <button id ="submit">Submit</button>
+    </p>
+   </section>
+
+   <script src="./assets/js/questions.js"></script>
+   <script src="./assets/js/script.js"></script>
+</body>
+</html>
