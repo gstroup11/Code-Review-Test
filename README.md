@@ -28,19 +28,19 @@ questions.js is from Bootcampspot;
 
 Based off the work of Xpert Learning Assistant:
 
-// get questions function
-function questions() {
-  var currentQuestion = questions[currentQuestionIndex];
+    // get questions function
+    function questions() {
+     var currentQuestion = questions[currentQuestionIndex];
 
-  // Update the HTML to display the current question
-  questionsEl.textContent = currentQuestion;
+     // Update the HTML to display the current question
+    questionsEl.textContent = currentQuestion;
 
-  // Add code to handle user input and check if the answer is correct
-}
+    // Add code to handle user input and check if the answer is correct
+    };
 
 Based off BootcampSpot Reference:
 
-function getQuestions() {
+    function getQuestions() {
     var currentQuestion = questions[currentQuestionIndex];
 
     var questionTitle = document.getElementById("full-question");
@@ -56,7 +56,7 @@ function getQuestions() {
     
         choicesEl.appendChild(choiceNode);
     }
-}
+    }
 
 
 Based off Xpert Learning Assistant:
@@ -73,7 +73,7 @@ Based off Xpert Learning Assistant:
 
 Based Off Xpert Learning Assistant:
 
- if (currentQuestionIndex === questions.length) {
+    if (currentQuestionIndex === questions.length) {
           quizEnd(); // Display the end screen if all questions have been answered
         } else {
           getQuestions(); // Display the next question
@@ -85,9 +85,9 @@ scores.js based off of Xpert Learning Assistant answers;
 
 based off Xpert Learning Assistant:
 
-  highScores.sort(function(a, b) {
-    return b.score - a.score;
-  });
+     highScores.sort(function(a, b) {
+        return b.score - a.score;
+    });
 
 STYLE.CSS```
 
@@ -112,18 +112,18 @@ Based off of the work of https://www.w3docs.com/snippets/css/how-to-style-button
 
 Based off the work of Bootcampspot:
 
-#answer-choices button {
-    display: inline-block;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 130%;
-    background-color: #563d7c;
-    border-radius: 5px;
-    padding: 2px 10px;
-    color: white;
-    border: 0;
-    transition: background-color 0.1s;
-  }
+    #answer-choices button {
+        display: inline-block;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 130%;
+        background-color: #563d7c;
+        border-radius: 5px;
+        padding: 2px 10px;
+        color: white;
+        border: 0;
+        transition: background-color 0.1s;
+    }
 
 lines 138-164 based on bootcampspot's reference;
 
